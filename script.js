@@ -75,26 +75,21 @@ addFlashcard = () => {
 
 
 
-const flashcard = document.createElement("div");
-const question = document.createElement('h2');
-const answer = document.createElement('h2');
 
-flashcard.className = 'flashcard';
 
-question.setAttribute("style", "border-top:1px solid red; padding: 15px; margin-top:30px");
-question.textContent = "What is 5½ - 1¼?;
 
-answer.setAttribute("style", "text-align:center; display:none; color:red");
-answer.textContent = "4¼";
 
-flashcard.appendChild(question);
-flashcard.appendChild(answer);
 
-flashcard.addEventListener("click", () => {
-  if(answer.style.display == "none")
-    answer.style.display = "block";
-  else
-    answer.style.display = "none";
-})
+const question = document.querySelector("#question");
+const answer = document.querySelector("#answer");
 
-document.querySelector("#flashcards").appendChild(flashcard);
+let flashcard_info = {
+  'my_question' : "What is 5½ - 1¼?"
+  'my_answer'  : "4¼"
+}
+
+contentArray.push(flashcard_info);
+localStorage.setItem('items', JSON.stringify(contentArray));
+flashcardMaker(contentArray[contentArray.length - 1]);
+question.value = "";
+answer.value = "";
