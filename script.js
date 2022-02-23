@@ -1,4 +1,4 @@
-var contentArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+var contentArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [{"my_question":"1+1","my_answer":"2"}];
 
 document.getElementById("save_card").addEventListener("click", () => {
   addFlashcard();
