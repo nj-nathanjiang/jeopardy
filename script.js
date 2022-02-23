@@ -1,4 +1,4 @@
-var contentArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : ["What is 1 + 1", "2"];
+var contentArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
 document.getElementById("save_card").addEventListener("click", () => {
   addFlashcard();
@@ -61,35 +61,3 @@ addFlashcard = () => {
   question.value = "";
   answer.value = "";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const question = document.querySelector("#question");
-const answer = document.querySelector("#answer");
-
-let flashcard_info = {
-  'my_question' : "What is 5½ - 1¼?"
-  'my_answer'  : "4¼"
-}
-
-contentArray.push(flashcard_info);
-localStorage.setItem('items', JSON.stringify(contentArray));
-flashcardMaker(contentArray[contentArray.length - 1]);
-question.value = "";
-answer.value = "";
