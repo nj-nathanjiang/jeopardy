@@ -61,3 +61,40 @@ addFlashcard = () => {
   question.value = "";
   answer.value = "";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const flashcard = document.createElement("div");
+const question = document.createElement('h2');
+const answer = document.createElement('h2');
+
+flashcard.className = 'flashcard';
+
+question.setAttribute("style", "border-top:1px solid red; padding: 15px; margin-top:30px");
+question.textContent = "What is 5½ - 1¼?;
+
+answer.setAttribute("style", "text-align:center; display:none; color:red");
+answer.textContent = "4¼";
+
+flashcard.appendChild(question);
+flashcard.appendChild(answer);
+
+flashcard.addEventListener("click", () => {
+  if(answer.style.display == "none")
+    answer.style.display = "block";
+  else
+    answer.style.display = "none";
+})
+
+document.querySelector("#flashcards").appendChild(flashcard);
